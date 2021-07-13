@@ -60,3 +60,15 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+#Task
+build a web portal for Customers to enable them register using Customer Name, Website, Email.. After registration, Email verification is required. once the verification is completed, Customer can login and create User with specific privileges (Admin/full access, Sales/Sales Page, Back Office/Configuration & Settings)
+Users can have either 1 or more privileges. Sales Page should show sales data (stored in Sales table: id, User, payment -> (1, Lala, 1900)(2,Dipsy, 200.01))
+Configuration & Settings page shows data from config table: (id, sales target, sales user) -> (1,2000, Lala)(2, 3000.50, Dipsy) Back office can view and modify the settings as needed.
+
+#Notes
+1-Routes is splited to  two Prefix (Customer &user)
+2-customer can login after verification of mail or register
+3-customer create user with email and password and set any number of roles
+4-user can make its own operation according to his roles
