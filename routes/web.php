@@ -16,13 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/verification/{userId}', [App\Http\Controllers\Auth\RegisterController::class, 'verify'])->name('verify');
 
 Route::group(['prefix' => 'customer'],function(){
     Route::group(['as' => 'customer'],function(){
         // ///////////////////////////////////////////////
         ########################################Auth routes#####################################
-        Route::get('/verification/{userId}', [App\Http\Controllers\Auth\RegisterController::class, 'verify'])->name('verify');
+       
         Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
         Route::post('/Clogin', [App\Http\Controllers\Auth\LoginController::class, 'customerLgin'])->name('Clogin');
         Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'register'])->name('register');
@@ -63,5 +62,7 @@ Route::group(['prefix' => 'user'],function(){
    
     });
 });
-// ->middleware('verified');;
+Route::get('/verification/{userId}', [App\Http\Controllers\Auth\RegisterController::class, 'verify'])->name('verify');
+
+
 

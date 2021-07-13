@@ -22,7 +22,15 @@
                         <div class="user">
                             <header class="user__header">
                                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
-                                <h1 class="user__title">Login Form</h1>
+                    @if($loginType=='customer')
+                                
+                                <h1 class="user__title">Customer Login Form</h1>
+                         
+                              
+                          @else
+                          <h1 class="user__title">User Login Form</h1>
+                              
+                          @endif
                             </header>
                             
                             @if(session()->has('message'))
